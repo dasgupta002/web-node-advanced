@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Markdown Blog Web App</title>
+        <link rel = "stylesheet" type = "text/css"
+              href = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class = "container">
+            <h1 class = "mt-4 mb-4"><%= post.heading %></h1>
+            <div class = "text-muted mb-4">
+                <%= post.createdOn.toLocaleDateString() %>
+            </div>
+            <a href = "/" class = "btn btn-secondary mb-2">All Posts</a>
+            <a href = "/posts/edit/<%= post.id %>" class = "btn btn-info mb-2">Edit</a>
+            <hr>
+            <div>
+                <%= post.body %>
+            </div>
+        </div>       
+    </body>
+</html>

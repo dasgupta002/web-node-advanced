@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Markdown Blog Web App</title>
+        <link rel = "stylesheet" type = "text/css"
+              href = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class = "container">
+            <h1 class = "mt-4 mb-4">Edit Post</h1>
+            <form action = "/posts/update/<%= post.id %>" method = "post">
+                <%- include("partials/input") %>
+            </form>
+        </div>       
+    </body>
+</html>

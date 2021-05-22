@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Markdown Blog Web App</title>
+        <link rel = "stylesheet" type = "text/css"
+              href = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class = "container">
+            <h1 class = "mt-4 mb-4">Blog Posts</h1>
+            <a href = "/posts/create" class = "btn btn-warning">Create Post</a>
+            <hr>
+            
+            <% posts.forEach(post => { %>
+                <div class = "card mt-4">
+                    <div class = "card-body">
+                        <h4 class = "card-title">
+                            <%= post.heading %>
+                        </h4>
+                        <div class = "card-subtitle text-muted mb-2">
+                            <%= post.createdOn.toLocaleDateString() %>
+                        </div>
+                        <div class = "card-text mb-2">
+                            <%= post.metadata %>
+                        </div>
+                        <a href = "/posts/<%= post.slug %>" class = "btn btn-info mb-2">Read More</a>
+                        <a href = "/posts/edit/<%= post.id %>" class = "btn btn-info mb-2">Edit</a>
+                        <form action = "/posts/<%= post.id %>" method = "post" class = "d-inline">
+                            <button type = "submit" class = "btn btn-danger mb-2">Delete Post</button>                        
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>       
+    </body>
+</html>
