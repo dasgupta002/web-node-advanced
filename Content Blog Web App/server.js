@@ -4,7 +4,8 @@ const Post = require("./models/post");
 const postsRouter = require("./routes/posts");
 const app = express();
 
-mongoose.connect("mongodb+srv://blog:100@cluster0.44mmo.mongodb.net/blog?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect("mongodb+srv://blog:100@cluster0.44mmo.mongodb.net/blog?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+        .catch((error) => next(error));
 
 app.set("view engine", "ejs");
 
