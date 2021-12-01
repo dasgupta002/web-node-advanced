@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+    margin: 20px 40px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    background: #fafafa;
+}
+
+h1, h2, h3, h4, ul, li, a, p, input, label, button, div, footer {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    color: #444;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 120px;
+}
+
+nav > ul {
+    display: flex;
+    align-items: center;
+}
+
+nav > ul > li {
+    margin-left: 20px;
+}
+
+nav > ul > li > a {
+    padding: 10px 16px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+form {
+    width: 360px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: white;
+}
+
+form > h2 {
+    font-size: 2.4em;
+    font-weight: 990;
+    margin-bottom: 40px;
+}
+
+form > input {
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    width: 95%;
+}
+
+form > label {
+    display: block;
+    margin: 20px 0 10px;
+}
+
+form > button {
+    margin-top: 30px;
+    border-radius: 36px;
+    background: #fee996;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8em;
+    display: block;
+    padding: 10px 16px;
+    letter-spacing: 2px; 
+}
+
+.button {
+    border-radius: 36px;
+    background: #fee996;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+.hero > img {
+    width: 250px;
+    margin-right: 40px;
+}
+
+.hero > h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero > h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    color: #999;
+}
+
+.error {
+    color: #ff0099;
+    margin: 10px 2px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.tags > .button {
+    margin-top: 20px;
+    padding: 12px 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 0.8em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 80px;
+    margin: 80px auto;
+    max-width: 1200px;
+}
+
+.recipe {
+    display: inline-block;
+    border-radius: 20px;
+    background: white;
+    position: relative;
+}
+
+.recipe > img {
+    width: 100px;
+    margin: -30px auto 20px;
+}

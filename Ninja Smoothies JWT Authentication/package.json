@@ -1,0 +1,19 @@
+{
+  "name": "auth-jwt",
+  "version": "1.0.0",
+  "description": "Node auth layer with JWT",
+  "main": "app.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "dg",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "validator": "^13.7.0"
+  }
+}
