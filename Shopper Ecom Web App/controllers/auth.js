@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator/check');
 
 const User = require('../models/user');
 
-const transporter = nodemailer.createTransport(sendgrid({ auth : { api_key: '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' } }));
+const transporter = nodemailer.createTransport(sendgrid({ auth : { api_key: process.env.SENDGRID_API_KEY } }));
 
 exports.showLogin = (req, res, next) => {
     res.render('auth/login', { pageTitle: 'User - Login', path: '/auth/login', errors: [], oldInput: { email: '', password: '' } });
