@@ -1,0 +1,21 @@
+extends ../layout/skeleton.pug
+
+block title 
+    title #{ pageTitle }
+
+block styles
+    link(rel = "stylesheet", href = "/css/item.css")
+
+block content        
+    main
+        .item
+            img(src = '/' + product.imageURL, alt = "")
+            .content
+                h3 #{ product.title }
+                p $ #{ product.price }
+                p #{ product.description }
+                if auth    
+                form(action = "/cart", method = "POST")
+                    input(type = "hidden" name = "_csrf" value = csrfToken)
+                    input(type = "hidden", name = "itemId", value = product._id)
+                    button Add to cart   

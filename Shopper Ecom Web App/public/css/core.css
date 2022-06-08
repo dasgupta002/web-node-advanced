@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+*::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  padding: 1rem; 
+  margin: auto;
+}
+ 
+.main-header {
+  height: 3.5rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #40826d;
+}
+
+.main-header__nav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header__item-list {
+  margin: 0;
+  padding: 0; 
+  list-style: none;
+  display: flex;   
+}
+
+.main-header__item {
+  margin: 0 1rem;
+  padding: 0;    
+}
+
+.main-header__item > a {
+  text-decoration: none;
+  color: white; 
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active,
+.main-header__item button:hover,
+.main-header__item button:active {
+  color: #f0e130;
+}
+
+button {
+  font: inherit;
+  border: 1px solid #00659c;
+  color: #00659c;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer; 
+}
+
+button[type = "button"] {
+  margin-left: .6rem;
+}
+
+.main-header__nav button[type = "submit"] {
+  all: unset;
+  color: white
+}
+
+.main-header__nav button[type = "submit"]:hover {
+  all: unset;
+  color: #f0e130;
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  background: #00659c;
+  color: white;
+}
+
+.pagination {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #00695c;
+  padding: 0.5rem;
+  border: 1px solid #00695c;
+  border-radius: 11px;
+  margin: 0 1rem;
+}
+
+.pagination a:hover, 
+.pagination a:active,
+.pagination a.active {
+  background: #00695c;
+  color: white;
+}
+
+.custom-error {
+  width: 40rem;
+  margin: 15rem auto;
+  text-align: center;
+}
+
+.user-message {
+  margin: 2.4rem auto;
+  width: 20%;
+  border: 1px solid #4771fa;
+  background: #b9c9ff;
+  padding: 1rem;
+  border-radius: 3px;
+  color: #6868ff;
+}
+
+.user-message__error {
+  border: red;
+  background: #ff7878;
+  color: red;
+}

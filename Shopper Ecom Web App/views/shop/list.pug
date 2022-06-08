@@ -1,0 +1,37 @@
+extends ../layout/skeleton.pug
+
+block title 
+    title #{ pageTitle }
+
+block styles
+    link(rel = "stylesheet", href = "/css/details.css")
+
+block content  
+    main 
+        if products.length > 0
+            .grid 
+                each product in products
+                    .card
+                        img(src = product.imageURL, alt = "")
+                        h3 #{ product.title }
+                        p $ #{ product.price }
+                        p #{ product.description }
+                        button
+                            a(href = "/product-details/" + product.id) Product Details 
+                        if auth    
+                            form(action = "/cart", method = "POST")
+                                input(type = "hidden" name = "_csrf" value = csrfToken)
+                                input(type = "hidden", name = "itemId", value = product._id)
+                                button Add to cart   
+            section.pagination
+                if currentPage !== 1 && previousPage !== 1
+                    a(href = "?page=1") 1 
+                if hasPrevious 
+                    a(href = "?page=" + previousPage) #{ previousPage }
+                a(href = "?page=" + currentPage class = "active") #{ currentPage }
+                if hasNext 
+                    a(href = "?page=" + nextPage) #{ nextPage }
+                if lastPage !== currentPage && lastPage !== nextPage
+                    a(href = "?page=" + lastPage) #{ lastPage }
+        else 
+            h2 No products found, browse more!    

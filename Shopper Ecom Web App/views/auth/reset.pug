@@ -1,0 +1,18 @@
+extends ../layout/skeleton.pug
+
+block title 
+    title #{ pageTitle }
+
+block styles
+    link(rel = "stylesheet", href = "/css/form.css")
+
+block content        
+    main
+        if errors.length > 0 
+            .user-message.user-message__error #{ errors[0].msg }
+        form.reset-form(action = "/auth/reset-password", method = "POST", novalidate)
+            .form-control  
+                label(for = "email") Mailing Address
+                input(type = "email", name = "email", id = "email", value = oldInput.email, class = (errors.find((error) => error.param === 'email') ? 'invalid' : ''), required = "required")
+            input(type = "hidden", name = "_csrf", value = csrfToken)
+            button(type = "submit") Reset Password

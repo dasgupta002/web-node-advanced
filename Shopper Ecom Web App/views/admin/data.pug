@@ -1,0 +1,26 @@
+extends ../layout/skeleton.pug
+
+block title 
+    title #{ pageTitle }
+
+block styles
+    link(rel = "stylesheet", href = "/css/details.css")
+
+block content        
+    main
+        if products.length > 0
+            .grid 
+                each product in products
+                    .card
+                        img(src = '/' + product.imageURL, alt = "")
+                        h3 #{ product.title }
+                        p $ #{ product.price }
+                        p #{ product.description }
+                        button
+                            a(href = "/admin/edit-product/" + product.id) Edit Product 
+                        form(action = "/admin/delete-product", method = "POST")
+                            input(type = "hidden", name = "itemId", value = product.id)
+                            input(type = "hidden", name = "_csrf", value = csrfToken)
+                            button Delete Product
+        else 
+            h2 No products found, create some rather!

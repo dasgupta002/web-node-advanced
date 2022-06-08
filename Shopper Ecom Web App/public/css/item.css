@@ -1,0 +1,24 @@
+.item {
+    width: 40rem;
+    margin: 7rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.item > img {
+    height: 14rem;
+}
+
+.content {
+    text-align: left;
+    width: 100%;
+}
+
+.content > form {
+    margin-top: 4rem;
+}
+
+.content > form > button {
+    width: 100%;
+}
