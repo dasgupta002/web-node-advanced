@@ -17,7 +17,7 @@ const errorController = require('./controllers/error');
 
 const app = express();
 
-const store = new MongoDBStore({ uri: 'mongodb+srv://dg:200@cluster0.qyanq.mongodb.net/shopper?retryWrites=true&w=majority', collection: 'sessions' });
+const store = new MongoDBStore({ uri: process.env.MONGO_URI, collection: 'sessions' });
 
 const fileStorage = multer.diskStorage({ 
     destination: 'images',
@@ -81,6 +81,6 @@ app.use((error, req, res, next) => res.status(500).render('500', { pageTitle: '5
 
 const port = process.env.PORT || 5000;
 
-mongoose.connect('mongodb+srv://dg:200@cluster0.qyanq.mongodb.net/shopper?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
         .then((result) => app.listen(port))
         .catch((error) => console.error(error.message));
