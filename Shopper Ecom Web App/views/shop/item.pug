@@ -15,7 +15,7 @@ block content
                 p $ #{ product.price }
                 p #{ product.description }
                 if auth    
-                form(action = "/cart", method = "POST")
-                    input(type = "hidden" name = "_csrf" value = csrfToken)
-                    input(type = "hidden", name = "itemId", value = product._id)
-                    button Add to cart   
+                    form(action = "/cart", method = "POST")
+                        input(type = "hidden" name = "_csrf" value = csrfToken)
+                        input(type = "hidden", name = "itemId", value = product._id)
+                        button Add to cart   
